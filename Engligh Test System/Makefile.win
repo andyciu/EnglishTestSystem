@@ -1,0 +1,46 @@
+# Project: Engligh Test System
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe -D__DEBUG__
+CC       = gcc.exe -D__DEBUG__
+WINDRES  = windres.exe
+OBJ      = ETSmain.o ETSpersoncheck.o ETSprint.o ETSdatabase.o ETStest.o ETSRPprint.o ETSRPview.o
+LINKOBJ  = ETSmain.o ETSpersoncheck.o ETSprint.o ETSdatabase.o ETStest.o ETSRPprint.o ETSRPview.o
+LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc -g3
+INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = "Engligh Test System.exe"
+CXXFLAGS = $(CXXINCS) -g3
+CFLAGS   = $(INCS) -g3
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+ETSmain.o: ETSmain.c
+	$(CC) -c ETSmain.c -o ETSmain.o $(CFLAGS)
+
+ETSpersoncheck.o: ETSpersoncheck.c
+	$(CC) -c ETSpersoncheck.c -o ETSpersoncheck.o $(CFLAGS)
+
+ETSprint.o: ETSprint.c
+	$(CC) -c ETSprint.c -o ETSprint.o $(CFLAGS)
+
+ETSdatabase.o: ETSdatabase.c
+	$(CC) -c ETSdatabase.c -o ETSdatabase.o $(CFLAGS)
+
+ETStest.o: ETStest.c
+	$(CC) -c ETStest.c -o ETStest.o $(CFLAGS)
+
+ETSRPprint.o: ETSRPprint.c
+	$(CC) -c ETSRPprint.c -o ETSRPprint.o $(CFLAGS)
+
+ETSRPview.o: ETSRPview.c
+	$(CC) -c ETSRPview.c -o ETSRPview.o $(CFLAGS)
